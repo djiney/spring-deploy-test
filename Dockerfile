@@ -5,5 +5,5 @@ WORKDIR /build/
 RUN mvn package
 FROM openjdk:11
 WORKDIR /app
-COPY --from=MAVEN_BUILD /build/target/docker-boot-intro-0.1.0.jar /app/
-ENTRYPOINT ["java", "-jar", "docker-boot-intro-0.1.0.jar"]
+COPY --from=MAVEN_BUILD /build/target/deploy-0.0.1.jar /app/
+ENTRYPOINT ["java", "-jar", "deploy-0.0.1.jar"]
